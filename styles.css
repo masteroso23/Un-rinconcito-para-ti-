@@ -1,0 +1,47 @@
+:root{--night:#0d1626;--slate:#2b3a50;--cream:#f4e9d3;--brown:#6b4a32;--warm:#f2b84b;--glow:rgba(242,150,60,.18)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--night);color:var(--cream);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+body{background:radial-gradient(ellipse at 70% 90%,var(--glow),transparent 60%),linear-gradient(#0d1626,#1a2638);transition:background .8s}
+body.warm{background:radial-gradient(ellipse at 50% 80%,rgba(242,150,60,.4),transparent 65%),linear-gradient(#1a2638,#3a2d28)}
+body.happy{background:radial-gradient(ellipse at 50% 50%,rgba(255,210,100,.35),transparent 70%),linear-gradient(#26364d,#4a3b2c)}
+body.calm{background:linear-gradient(#0a111d,#131c2b)}
+body.sleepy{background:radial-gradient(ellipse at 50% 90%,rgba(242,150,60,.15),transparent 60%),#070c16}
+#rain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55;z-index:0}
+#dust{position:fixed;inset:0;pointer-events:none;z-index:0}
+#dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--warm);opacity:.5;animation:float 14s linear infinite}
+@keyframes float{from{transform:translateY(100vh)}to{transform:translateY(-10vh)}}
+.screen{position:relative;z-index:1;min-height:100vh;padding:20px 16px 40px;display:flex;flex-direction:column;align-items:center;gap:16px;animation:fade 1s}
+.hidden{display:none!important}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.card{max-width:560px;width:100%;background:rgba(43,58,80,.78);border:1px solid rgba(242,184,75,.3);border-radius:18px;padding:20px 22px;line-height:1.6;font-size:1.1rem;white-space:pre-line;box-shadow:0 0 30px var(--glow)}
+.btn{min-height:46px;padding:10px 20px;border-radius:24px;border:1px solid var(--warm);background:var(--brown);color:var(--cream);font:inherit;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:#85603f;outline:2px solid var(--warm)}
+.soft,footer{opacity:.75;text-align:center}
+h1,h2{font-weight:normal;color:var(--warm);text-align:center;margin:8px 0}
+nav,#menuBtns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:600px}
+.scene{position:relative;width:min(560px,100%);height:300px;background:linear-gradient(var(--slate),#3a2d28);border-radius:16px;overflow:hidden;border:2px solid var(--brown)}
+.window{position:absolute;left:50%;top:14px;transform:translateX(-50%);width:62%;height:62%;border:6px solid var(--brown);background:#0a1224;overflow:hidden}
+.sky{position:absolute;inset:0}
+.sky .st{position:absolute;width:14px;height:14px;background:none;border:0;color:var(--warm);font-size:12px;cursor:pointer;padding:0;min-width:24px;min-height:24px;animation:tw 3s ease-in-out infinite}
+.sky .st.found{color:#fff}
+@keyframes tw{50%{opacity:.35}}
+.curtain{position:absolute;top:0;width:16%;height:100%;background:rgba(150,90,60,.6);animation:sway 7s ease-in-out infinite;transform-origin:top}
+.curtain.l{left:0}.curtain.r{right:0;animation-delay:2s}
+@keyframes sway{50%{transform:skewX(2deg)}}
+.obj{position:absolute;background:none;border:0;font-size:2.2rem;cursor:pointer;min-width:48px;min-height:48px;transition:transform .3s}
+.obj:active{transform:scale(1.2)}
+.lamp{left:8%;bottom:30px}.cat{left:42%;bottom:6px}.env{right:8%;bottom:30px}.radio{right:30%;bottom:6px}
+.cat.go{animation:hop .6s}@keyframes hop{40%{transform:translateY(-18px) rotate(-8deg)}}
+.tag{position:absolute;left:10px;bottom:4px;margin:0;font-size:.8rem;opacity:.7}
+.scene.dim{filter:brightness(.7)}
+footer{font-size:.85rem}
+#secret{position:fixed;inset:0;z-index:5;background:rgba(5,10,20,.7);display:flex;align-items:center;justify-content:center;padding:16px}
+#secret .card{text-align:center}
+#collList .card{margin-bottom:10px}
+.star{font-size:4rem;color:var(--warm);display:block;text-align:center;transition:transform 4s ease-in-out}
+.star.big{transform:scale(2.4)}
+.hug{font-size:3rem;text-align:center;animation:hugs 3s ease-in-out infinite}
+@keyframes hugs{50%{transform:scale(1.15)}}
+@media(max-width:480px){.scene{height:260px}.card{font-size:1.02rem}.btn{width:100%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#rain{display:none}}
+.amb{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}

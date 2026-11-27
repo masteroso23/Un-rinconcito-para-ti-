@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un rinconcito para ti</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<div id="dust" aria-hidden="true"></div>
+
+<section id="welcome" class="screen">
+  <div class="card" id="welcomeText"></div>
+  <button id="enter" class="btn">Entrar a mi refugio</button>
+</section>
+
+<main id="room" class="screen hidden">
+  <h1>Un rinconcito para ti</h1>
+  <div class="scene">
+    <div class="window"><div class="sky" id="sky"></div><div class="curtain l"></div><div class="curtain r"></div></div>
+    <button class="obj lamp" id="lamp" aria-label="Lámpara">💡</button>
+    <button class="obj cat" id="cat" aria-label="Gatito">🐈</button>
+    <button class="obj env" id="env" aria-label="Sobre">✉️</button>
+    <button class="obj radio" id="radio" aria-label="Radio: silenciar o reactivar música">📻</button>
+    <p class="tag" id="radioTag">Un pokito de musika para ti</p>
+  </div>
+  <div class="card msg" id="mainMsg"></div>
+  <p class="soft">Tómate tu tiempo amol</p>
+  <div class="amb"><button class="btn" id="rainBtn">🌧️ Lluvia</button><button class="btn" id="nightBtn">🌙 Noche</button><label>Ambiente <input type="range" id="ambVol" min="0" max="1" step="0.05"></label></div>
+  <nav>
+    <button class="btn" id="goMenu">Por si lo necesitas</button>
+    <button class="btn" id="musicBtn">Escuchar</button>
+    <button class="btn" id="goColl">Pekeñas cositas escondidas</button>
+    <button class="btn" id="goRoom">Volver a mi refugio</button>
+  </nav>
+  <footer>Hecho con muchisimo amol para ti bombon</footer>
+</main>
+
+<section id="menu" class="screen hidden">
+  <h2>Por si lo necesitas</h2>
+  <div id="menuBtns"></div>
+  <button class="btn back">Volver a mi refugio</button>
+</section>
+
+<section id="exp" class="screen hidden">
+  <div id="expBody" class="card"></div>
+  <button class="btn back">Volver a mi refugio</button>
+  <p class="soft">Vuelve cuando quieras mi preciosa</p>
+</section>
+
+<section id="coll" class="screen hidden">
+  <h2>Pekeñas cositas escondidas</h2>
+  <div id="collList"></div>
+  <button class="btn back">Volver a mi refugio</button>
+</section>
+
+<div id="secret" class="hidden" role="dialog"><div class="card"><p id="secretText"></p><button class="btn" id="secretClose">Cerrar</button></div></div>
+<script src="script.js"></script>
+</body>
+</html>
